@@ -22,6 +22,7 @@ import com.wrightr.trivia_2024.controller.AppController;
 
 public class MainActivity extends AppCompatActivity {
 
+    String url = "https://raw.githubusercontent.com/curiousily/simple-quiz/master/script/statements-data.json";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,18 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+            JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
+
+                    response -> {
+                        Log.d("TAG", "onCreate: " + response.toString());
+                    },
+                    error -> {
+
+
+                    }
+                    );
+
+            AppController.getInstance().addToRequestQueue(jsonArrayRequest);
 
     }
 }
