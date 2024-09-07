@@ -17,6 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.wrightr.trivia_2024.controller.AppController;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,6 +33,6 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-
+       // AppController.getInstance(MainActivity.this).getRequestQueue();
     }
 }
