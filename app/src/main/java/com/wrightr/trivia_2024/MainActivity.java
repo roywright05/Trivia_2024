@@ -20,8 +20,6 @@ import com.android.volley.toolbox.Volley;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView tvTest;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,28 +31,6 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-        tvTest = findViewById(R.id.tv_test);
-        RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
-        String url = "https://www.google.com";
-
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-
-                 response -> {
-
-                    tvTest.setText("200 response: " + response.substring(0, 300));
-                     Log.d("Response", "onCreate: " + response.substring(0, 500));
-
-                }, error -> {
-
-                    tvTest.setText("404 ERROR!!!");
-                }
-        );
-
-        queue.add(stringRequest);
-
-
-
 
 
     }
