@@ -1,5 +1,7 @@
 package com.wrightr.trivia_2024.model;
 
+import androidx.annotation.NonNull;
+
 public class Question {
 
     private String answer;
@@ -27,5 +29,14 @@ public class Question {
 
     public void setAnswerTrue(boolean answerTrue) {
         this.answerTrue = answerTrue;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "Question{" +
+                "answer='" + answer + '\'' +
+                ", answerTrue=" + answerTrue +
+                '}';
     }
 }

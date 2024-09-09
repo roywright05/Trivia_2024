@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         List<Question> questions = new Repository().getQuestion(questionArrayList ->
-                Log.d("Main", "onCreate: " + questionArrayList));
+                Log.d("Happy", "onCreate: " + questionArrayList));
 
 
     }
