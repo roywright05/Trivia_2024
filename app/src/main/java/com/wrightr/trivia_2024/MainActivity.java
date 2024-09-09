@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        Repository.getQuestion();
+        new Repository().getQuestion();
 
     }
 }
