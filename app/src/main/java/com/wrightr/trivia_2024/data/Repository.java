@@ -29,8 +29,16 @@ public class Repository {
                     for (int i = 0; i < response.length(); i++){
 
                         try {
-                            Log.d("Question", "onCreate: " + response.getJSONArray(i).get(0));
-                            Log.d("Answer", "Survey Says!: " + response.getJSONArray(i).getBoolean(1));
+
+                            Question question = new Question(response.getJSONArray(i).get(0).toString(),
+                                    response.getJSONArray(i).getBoolean(1));
+
+                            questionArrayList.add(question);
+
+                            //Log.d("Hey yo!", "getQuestion: " + questionArrayList);
+
+                           // Log.d("Question", "onCreate: " + response.getJSONArray(i).get(0));
+                            //Log.d("Answer", "Survey Says!: " + response.getJSONArray(i).getBoolean(1));
                         } catch (JSONException e) {
                             //throw new RuntimeException(e);
                             e.printStackTrace();
@@ -46,6 +54,6 @@ public class Repository {
 
         AppController.getInstance().addToRequestQueue(jsonArrayRequest);
 
-        return null;
+        return questionArrayList;
     }
 }

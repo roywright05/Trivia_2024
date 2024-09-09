@@ -20,6 +20,9 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.wrightr.trivia_2024.controller.AppController;
 import com.wrightr.trivia_2024.data.Repository;
+import com.wrightr.trivia_2024.model.Question;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         new Repository().getQuestion();
+
+        List<Question> questions = new Repository().getQuestion();
+
+        Log.d("Main", "onCreate: " + questions);
 
     }
 }
