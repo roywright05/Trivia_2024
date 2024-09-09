@@ -19,7 +19,7 @@ public class Repository {
     ArrayList<Question> questionArrayList = new ArrayList<>();
 
 
-    public List<Question> getQuestion() {
+    public List<Question> getQuestion(final AnswerListAsyncResponse callback) {
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
 
@@ -43,6 +43,11 @@ public class Repository {
                             //throw new RuntimeException(e);
                             e.printStackTrace();
                         }
+                    }
+
+                    if (callback != null){
+
+                        callback.processFinished(questionArrayList);
                     }
 
                 },
