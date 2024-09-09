@@ -19,6 +19,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.wrightr.trivia_2024.controller.AppController;
+import com.wrightr.trivia_2024.data.Repository;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,18 +36,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-            JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
-
-                    response -> {
-                        Log.d("TAG", "onCreate: " + response.toString());
-                    },
-                    error -> {
-
-
-                    }
-                    );
-
-            AppController.getInstance().addToRequestQueue(jsonArrayRequest);
+        Repository.getQuestion();
 
     }
 }

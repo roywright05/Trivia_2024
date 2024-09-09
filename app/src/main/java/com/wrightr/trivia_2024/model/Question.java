@@ -3,7 +3,7 @@ package com.wrightr.trivia_2024.model;
 public class Question {
 
     private String answer;
-    boolean answerTrue;
+    private boolean answerTrue;
 
     public Question(){}
 
