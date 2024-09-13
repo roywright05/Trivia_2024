@@ -28,7 +28,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    String url = "https://raw.githubusercontent.com/curiousily/simple-quiz/master/script/statements-data.json";
+    //String url = "https://raw.githubusercontent.com/curiousily/simple-quiz/master/script/statements-data.json";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
