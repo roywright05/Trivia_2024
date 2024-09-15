@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Trivia_2024</string>
+    <string name="title_text">Roy\'s Trivia</string>
+    <string name="out_of_text">Question: 43/500</string>
 </resources>
