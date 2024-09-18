@@ -4,5 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_gray_text_color">#898888</color>
     <color name="bg_color">#141A33</color>
-    <color name="card_bg_color">#EEF7FF</color>
+    <color name="card_bg_color">#10439F</color>
+    <color name="btn1_bg_color">#00215E</color>
+    <color name="btn1_txt_color">#1A4D2E</color>
+    <color name="next_btn_color">#4379F2</color>
 </resources>

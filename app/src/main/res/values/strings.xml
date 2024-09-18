@@ -2,4 +2,8 @@
     <string name="app_name">Trivia_2024</string>
     <string name="title_text">Roy\'s Trivia</string>
     <string name="out_of_text">Question: 43/500</string>
+    <string name="btn_true">True</string>
+    <string name="btn_false">False</string>
+    <string name="btn_next">☞</string>
+    <string name="tv_question">Do you have any questions?</string>
 </resources>
