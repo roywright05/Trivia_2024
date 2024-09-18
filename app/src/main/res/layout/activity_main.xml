@@ -1,100 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:background="@color/bg_color"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/title_text"
-        style="@style/Main_Text_Style"
-        android:text="@string/title_text"
-        android:textColor="@color/light_gray_text_color"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.226"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <TextView
-        android:id="@+id/tv_question_num"
-        style="@style/Main_Text_Style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/question_text_margin"
-        android:text="@string/out_of_text"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.343"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_text"
-        app:layout_constraintVertical_bias="0.049" />
+    </data>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view"
-        android:layout_width="350dp"
-        android:layout_height="150dp"
-        android:layout_margin="@dimen/cv_margin"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="20dp"
-        app:cardBackgroundColor="@color/card_bg_color"
-        app:cardCornerRadius="@dimen/cv_corner_radius"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_question_num">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/bg_color"
+        tools:context=".MainActivity">
 
         <TextView
-            android:id="@+id/question_tv"
+            android:id="@+id/title_text"
+            style="@style/Main_Text_Style"
+            android:text="@string/title_text"
+            android:textColor="@color/light_gray_text_color"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.226"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_question_num"
             style="@style/Main_Text_Style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/question_text_margin"
-            android:padding="@dimen/btn_padding"
-            android:text="@string/tv_question"
-            android:textColor="@color/white" />
-    </androidx.cardview.widget.CardView>
+            android:layout_marginBottom="@dimen/question_text_margin"
+            android:text="@string/out_of_text"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.343"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_text"
+            app:layout_constraintVertical_bias="0.049" />
 
-    <Button
-        android:id="@+id/btn_true"
-        style="@style/btn_style"
-        android:layout_height="60dp"
-        android:text="@string/btn_true"
-        app:layout_constraintBottom_toTopOf="@+id/btn_false"
-        app:layout_constraintTop_toBottomOf="@+id/card_view"
-        app:layout_constraintVertical_bias="0.507"
-        tools:layout_editor_absoluteX="0dp" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="350dp"
+            android:layout_height="150dp"
+            android:layout_margin="@dimen/cv_margin"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            app:cardBackgroundColor="@color/card_bg_color"
+            app:cardCornerRadius="@dimen/cv_corner_radius"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_question_num">
 
-    <Button
-        android:id="@+id/btn_false"
-        style="@style/btn_style"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/btn1_bg_color"
-        android:text="@string/btn_false"
-        app:layout_constraintBottom_toTopOf="@+id/btn_next"
-        tools:layout_editor_absoluteX="2dp" />
+            <TextView
+                android:id="@+id/question_tv"
+                style="@style/Main_Text_Style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/question_text_margin"
+                android:padding="@dimen/btn_padding"
+                android:text="@string/tv_question"
+                android:textColor="@color/white" />
+        </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/btn_next"
-        style="@style/btn_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:backgroundTint="@color/next_btn_color"
-        android:text="@string/btn_next"
-        android:textColor="#0E0E0E"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.907"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_false" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btn_true"
+            style="@style/btn_style"
+            android:layout_height="60dp"
+            android:text="@string/btn_true"
+            app:layout_constraintBottom_toTopOf="@+id/btn_false"
+            app:layout_constraintTop_toBottomOf="@+id/card_view"
+            app:layout_constraintVertical_bias="0.507"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <Button
+            android:id="@+id/btn_false"
+            style="@style/btn_style"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/btn1_bg_color"
+            android:text="@string/btn_false"
+            app:layout_constraintBottom_toTopOf="@+id/btn_next"
+            tools:layout_editor_absoluteX="2dp" />
+
+        <Button
+            android:id="@+id/btn_next"
+            style="@style/btn_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:backgroundTint="@color/next_btn_color"
+            android:text="@string/btn_next"
+            android:textColor="#0E0E0E"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.907"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_false" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

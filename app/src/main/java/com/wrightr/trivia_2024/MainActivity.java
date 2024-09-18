@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.databinding.DataBindingUtil;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -21,6 +22,7 @@ import com.android.volley.toolbox.Volley;
 import com.wrightr.trivia_2024.controller.AppController;
 import com.wrightr.trivia_2024.data.AnswerListAsyncResponse;
 import com.wrightr.trivia_2024.data.Repository;
+import com.wrightr.trivia_2024.databinding.ActivityMainBinding;
 import com.wrightr.trivia_2024.model.Question;
 
 import java.util.ArrayList;
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
     //String url = "https://raw.githubusercontent.com/curiousily/simple-quiz/master/script/statements-data.json";
 
+        private ActivityMainBinding binding;
+        private int currentQuestionIndex;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        binding = DataBindingUtil.setContentView(MainActivity.this, R.layout.activity_main);
 
 
         List<Question> questions = new Repository().getQuestion(questionArrayList ->
