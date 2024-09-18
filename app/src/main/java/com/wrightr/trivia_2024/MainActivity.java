@@ -3,6 +3,7 @@ package com.wrightr.trivia_2024;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
         private ActivityMainBinding binding;
         private int currentQuestionIndex;
+        List<Question> questionList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,9 +51,36 @@ public class MainActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(MainActivity.this, R.layout.activity_main);
 
 
-        List<Question> questions = new Repository().getQuestion(questionArrayList ->
-                Log.d("Happy", "onCreate: " + questionArrayList));
+          questionList = new Repository().getQuestion(questionArrayList ->
+
+                 binding.questionTv.setText(questionArrayList.get(currentQuestionIndex).getAnswer()));
+                //Log.d("Happy", "onCreate: " + questionArrayList));
+
+
+        binding.btnNext.setOnClickListener(view -> {
+
+            currentQuestionIndex = (currentQuestionIndex + 1 ) % questionList.size();
+            Log.d("Click", "onCreate: " + currentQuestionIndex);
+            updateQuestion();
+        });
+
+        binding.btnFalse.setOnClickListener(view -> {
+
+        });
+
+        binding.btnTrue.setOnClickListener(view -> {
+
+        });
+
+       // Log.d("Click", "onCreate: " + currentQuestionIndex);
 
 
     }
+
+    private void updateQuestion() {
+        String question = questionList.get(currentQuestionIndex).getAnswer();
+        binding.questionTv.setText(question);
+    }
+
+
 }
