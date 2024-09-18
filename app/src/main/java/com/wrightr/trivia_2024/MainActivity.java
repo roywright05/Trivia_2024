@@ -51,23 +51,6 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
-        JsonObjectRequest country_capital = new JsonObjectRequest(Request.Method.GET, url, null,
-                response -> {
-
-                    try {
-                        Log.d("Pais", "onCreate: " + response.getJSONArray("Iran"));
-                    } catch (JSONException e) {
-                        throw new RuntimeException(e);
-                    }
-                },
-                error -> {
-
-
-                } );
-
-        requestQueue.add(country_capital);
-
         binding = DataBindingUtil.setContentView(MainActivity.this, R.layout.activity_main);
 
 
