@@ -6,4 +6,6 @@
     <string name="btn_false">False</string>
     <string name="btn_next">☞</string>
     <string name="tv_question">Do you have any questions?</string>
+    <string name="correct_answer">Correct! ✅ </string>
+    <string name="incorrect_answer">Incorrect ❌ </string>
 </resources>

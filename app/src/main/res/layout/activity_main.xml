@@ -48,7 +48,7 @@
             app:cardCornerRadius="@dimen/cv_corner_radius"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="133dp">
+            app:layout_constraintTop_toBottomOf="@+id/tv_question_num">
 
             <TextView
                 android:id="@+id/question_tv"
