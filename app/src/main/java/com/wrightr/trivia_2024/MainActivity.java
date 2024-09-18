@@ -18,6 +18,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.wrightr.trivia_2024.controller.AppController;
@@ -26,12 +27,14 @@ import com.wrightr.trivia_2024.data.Repository;
 import com.wrightr.trivia_2024.databinding.ActivityMainBinding;
 import com.wrightr.trivia_2024.model.Question;
 
+import org.json.JSONException;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    //String url = "https://raw.githubusercontent.com/curiousily/simple-quiz/master/script/statements-data.json";
+    String url = "https://raw.githubusercontent.com/samayo/country-json/master/src/country-by-capital-city.json";
 
         private ActivityMainBinding binding;
         private int currentQuestionIndex;
@@ -47,6 +50,23 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
+        JsonObjectRequest country_capital = new JsonObjectRequest(Request.Method.GET, url, null,
+                response -> {
+
+                    try {
+                        Log.d("Pais", "onCreate: " + response.getJSONArray("Iran"));
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+                },
+                error -> {
+
+
+                } );
+
+        requestQueue.add(country_capital);
 
         binding = DataBindingUtil.setContentView(MainActivity.this, R.layout.activity_main);
 
